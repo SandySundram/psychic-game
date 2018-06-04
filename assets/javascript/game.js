@@ -12,6 +12,8 @@ function psychic(userInput){
     var key = userInput.key;
     key = key.toLowerCase();
     document.getElementById("guessSoFar").innerHTML += key+" ";
+    document.querySelector("#wins").style.color = "black";
+    document.querySelector("#losses").style.color = "black";
     
     if(key != secretLetter){
         guesses = guesses - 1;
@@ -23,6 +25,8 @@ function psychic(userInput){
             document.getElementById("guessesLeft").innerHTML = "Guesses Left: ";
             document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
             secretLetter = randomLetter();
+            document.querySelector("#losses").style.color = "red";
+            // console.log(secretLetter + " in loop");
         }
     } else{
         wins++;
@@ -31,6 +35,7 @@ function psychic(userInput){
         document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
         document.getElementById("wins").innerHTML = "Wins :" + wins;
         secretLetter = randomLetter();
+        document.querySelector("#wins").style.color = "#0DFF3B";
         // console.log(secretLetter + " in loop");
 
     }
