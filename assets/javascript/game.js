@@ -3,7 +3,8 @@ var losses = 0;
 var guesses = 10;
 var guessSoFar;
 var secretLetter = randomLetter();
-// console.log(secretLetter + " out loop");
+console.log(secretLetter + " out loop");
+
 
 
 
@@ -12,8 +13,8 @@ function psychic(userInput){
     var key = userInput.key;
     key = key.toLowerCase();
     document.getElementById("guessSoFar").innerHTML += key+" ";
-    document.querySelector("#wins").style.color = "black";
-    document.querySelector("#losses").style.color = "black";
+    document.querySelector("#wins").style.color = "";
+    document.querySelector("#losses").style.color = "";
     
     if(key != secretLetter){
         guesses = guesses - 1;
@@ -26,7 +27,7 @@ function psychic(userInput){
             document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
             secretLetter = randomLetter();
             document.querySelector("#losses").style.color = "red";
-            // console.log(secretLetter + " in loop");
+            console.log(secretLetter + " in loop");
         }
     } else{
         wins++;
@@ -36,17 +37,20 @@ function psychic(userInput){
         document.getElementById("wins").innerHTML = "Wins :" + wins;
         secretLetter = randomLetter();
         document.querySelector("#wins").style.color = "#0DFF3B";
-        // console.log(secretLetter + " in loop");
+        console.log(secretLetter + " in loop");
 
     }
     
 
 }
-
+//Call psychic function when key is released
 document.onkeyup = psychic;
 
+//Function to generate random letter
 function randomLetter(){
     var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    return letters[Math.floor(Math.random() * Math.floor(27))];
+    //Math.random returns a number between 0 and 1
+    //Math.floor rounds number down so that we have no decimals
+    return letters[Math.floor(Math.random() * 27)];
 
 }
