@@ -4,9 +4,9 @@ h1{
 }
 #wins{
     color: black;
-    transition: color 0.5s;
+    transition: color 1s;
 }
 #losses{
     color: black;
-    transition: color 0.5s;
+    transition: color 1s;
 }

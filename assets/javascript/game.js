@@ -27,6 +27,7 @@ function psychic(userInput){
             document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
             secretLetter = randomLetter();
             document.querySelector("#losses").style.color = "red";
+            setTimeout(function(){document.querySelector("#losses").style.color = ""},1000);
             console.log(secretLetter + " in loop");
         }
     } else{
@@ -37,6 +38,7 @@ function psychic(userInput){
         document.getElementById("wins").innerHTML = "Wins :" + wins;
         secretLetter = randomLetter();
         document.querySelector("#wins").style.color = "#0DFF3B";
+        setTimeout(function(){document.querySelector("#wins").style.color = ""},1000);
         console.log(secretLetter + " in loop");
 
     }
@@ -51,6 +53,6 @@ function randomLetter(){
     var letters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     //Math.random returns a number between 0 and 1
     //Math.floor rounds number down so that we have no decimals
-    return letters[Math.floor(Math.random() * 27)];
+    return letters[Math.floor(Math.random() * 26)];
 
 }
