@@ -6,7 +6,7 @@ var secretLetter = randomLetter();
 console.log(secretLetter + " out loop");
 
 
-
+document.getElementById("guessesLeft").innerHTML = "Guesses Left: 10";
 
 function psychic(userInput){
     // var guesses;
@@ -15,6 +15,7 @@ function psychic(userInput){
     document.getElementById("guessSoFar").innerHTML += key+" ";
     document.querySelector("#wins").style.color = "";
     document.querySelector("#losses").style.color = "";
+    // document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guesses;
     
     if(key != secretLetter){
         guesses = guesses - 1;
@@ -23,7 +24,7 @@ function psychic(userInput){
             losses++;
             guesses = 10;
             document.getElementById("losses").innerHTML = "Losses: " + losses;
-            document.getElementById("guessesLeft").innerHTML = "Guesses Left: ";
+            document.getElementById("guessesLeft").innerHTML = "Guesses Left: 10";
             document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
             secretLetter = randomLetter();
             document.querySelector("#losses").style.color = "red";
@@ -33,7 +34,7 @@ function psychic(userInput){
     } else{
         wins++;
         guesses = 10;
-        document.getElementById("guessesLeft").innerHTML = "Guesses Left: ";
+        document.getElementById("guessesLeft").innerHTML = "Guesses Left: 10";
         document.getElementById("guessSoFar").innerHTML = "Your Guesses so far: ";
         document.getElementById("wins").innerHTML = "Wins :" + wins;
         secretLetter = randomLetter();
